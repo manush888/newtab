@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main">
+        <div class="page">
+            <input type="text" name="sin" id="sin" placeholder="Enter your thoughts.">
+        </div>
+    </div>
+    <div class="icn">
+        <img src="./icon.png" alt="logo">
+        <p class="pwd">Powered by MoA</p>
+    </div>
+
+    <script>
+        let input = document.querySelector('#sin');
+
+        function search() {
+            const query = input.value.trim();
+            if (query) {
+                const url = 'https://www.bing.com/search?q=' + encodeURIComponent(query);
+                window.open(url, '_parent'); // Opens the search in a new tab
+            }
+        }
+
+        input.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevents any default action, like form submission
+                search();
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

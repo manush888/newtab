@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "My Custom New Tab and Search Page",
+    "version": "1.0",
+    "description": "Custom New Tab and Search Page for Microsoft Edge",
+    "permissions": ["activeTab", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "chrome_url_overrides": {
+      "newtab": "newtab.html"
+    },
+    "icons": {
+      "48": "icon.png"
+    }
+  }
+  
